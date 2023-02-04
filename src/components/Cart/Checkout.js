@@ -42,6 +42,12 @@ const Checkout = (props) => {
     nameReset();
     streetReset();
     postalCodeReset();
+
+    props.onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      postalCode: enteredPostalCode
+    })
   };
 
   const nameInputClasses = nameHasError
@@ -65,6 +71,7 @@ const Checkout = (props) => {
           id="name"
           onChange={nameChangeHandler}
           onBlur={nameBlurHandler}
+          value={enteredName}
         />
         {nameHasError && <p>Please enter a valid name!</p>}
       </div>
