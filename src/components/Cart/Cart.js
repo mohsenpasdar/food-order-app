@@ -28,7 +28,7 @@ const Cart = (props) => {
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     const response = await fetch(
-      "https://completeguide-http-section14-default-rtdb.firebaseio.com/orders.json",
+      "https://ccompleteguide-http-section14-default-rtdb.firebaseio.com/orders.json",
       {
         method: "POST",
         body: JSON.stringify({
@@ -43,6 +43,7 @@ const Cart = (props) => {
         }
         setIsSubmitting(false);
         setDidSubmit(true);
+        cartCtx.clearCart()
       })
       .catch((error) => {
         setIsSubmitting(false);
