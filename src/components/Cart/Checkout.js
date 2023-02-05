@@ -37,7 +37,6 @@ const Checkout = (props) => {
 
   const confirmHandler = (event) => {
     event.preventDefault();
-    console.log(enteredName);
 
     nameReset();
     streetReset();
